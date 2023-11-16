@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ratings</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Ratings</h1>
+    <h2>Total Users with High Ratings (>4): {{ total_high_ratings_users }}</h2>    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Total Ratings</th>
+            <th>High Ratings (>4)</th>
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.user_id }}</td>
+                <td>{{ result.rating_count }}</td>
+                <td>{{ result.high_rating_count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
